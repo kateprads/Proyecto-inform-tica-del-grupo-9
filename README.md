@@ -10,3 +10,4 @@
 - Nombre 2 (@usuario2)
 # Proyecto-inform-tica-del-grupo-9
 Versión 1 generada por Kate Pradas
+Versión 1 generada por Kate Pradas
