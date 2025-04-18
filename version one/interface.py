@@ -1,4 +1,4 @@
-mport tkinter as tk
+import tkinter as tk
 from tkinter import ttk, messagebox # Añadir al inicio con los otros imports
 
 class GraphInterface(tk.Tk):

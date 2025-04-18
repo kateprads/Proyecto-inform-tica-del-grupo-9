@@ -1,12 +1,13 @@
+from matplotlib.path import Path
 import matplotlib.pyplot as plt
 import math
+
 class Node:
     def __init__(self, name, x, y):
         self.name = name
         self.x = x
         self.y = y
         self.neighbors = []
-
 
 class Segment:
     def __init__(self, name, origin, destination, cost=1):
@@ -15,25 +16,19 @@ class Segment:
         self.destination = destination
         self.cost = cost
 
-
 class Graph:
     def __init__(self):
-        self.nodes = []
-        self.segments = []
+        self.nodes = {}  # Cambiado a diccionario
+        self.segments = {}  # Cambiado a diccionario
 
     def find_node(self, name):
-        for node in self.nodes:
-            if node.name == name:
-                return node
-        return None
-
+        return self.nodes.get(name)
 
 def AddNode(g, n):
-    if g.find_node(n.name) is not None:
+    if n.name in g.nodes:
         return False
-    g.nodes.append(n)
+    g.nodes[n.name] = n
     return True
-
 
 def AddSegment(g, name, nameOrigin, nameDestination, cost=1):
     origin = g.find_node(nameOrigin)
@@ -43,16 +38,15 @@ def AddSegment(g, name, nameOrigin, nameDestination, cost=1):
         return False
 
     segment = Segment(name, origin, destination, cost)
-    g.segments.append(segment)
+    g.segments[name] = segment
     origin.neighbors.append(destination)
     return True
-
 
 def GetClosest(g, x, y):
     closest_node = None
     min_distance = float('inf')
 
-    for node in g.nodes:
+    for node in g.nodes.values():
         distance = math.sqrt((node.x - x) ** 2 + (node.y - y) ** 2)
         if distance < min_distance:
             min_distance = distance
@@ -60,83 +54,57 @@ def GetClosest(g, x, y):
 
     return closest_node
 
-
-def Plot(g,ax=None):
-    plt.figure(figsize=(10, 8))
-
-    # Draw segments
-    for segment in g.segments:
-        plt.plot([segment.origin.x, segment.destination.x],
-                 [segment.origin.y, segment.destination.y],
-                 'k-', alpha=0.5)
-        # Add cost label at midpoint
+def Plot(g, ax=None):
+    if ax is None:
+        fig, ax = plt.subplots(figsize=(10, 8))
+    
+    # Dibujar segmentos
+    for segment in g.segments.values():
+        ax.plot([segment.origin.x, segment.destination.x],
+                [segment.origin.y, segment.destination.y],
+                'k-', alpha=0.5)
+        # Etiqueta de costo
         mid_x = (segment.origin.x + segment.destination.x) / 2
         mid_y = (segment.origin.y + segment.destination.y) / 2
-        plt.text(mid_x, mid_y, str(segment.cost), color='red')
+        ax.text(mid_x, mid_y, str(segment.cost), color='red')
 
-    # Draw nodes
-    for node in g.nodes:
-        plt.plot(node.x, node.y, 'bo')
-        plt.text(node.x, node.y, node.name, fontsize=12, ha='right')
+    # Dibujar nodos
+    for node in g.nodes.values():
+        ax.plot(node.x, node.y, 'bo')
+        ax.text(node.x, node.y, node.name, fontsize=12, ha='right')
 
-    plt.grid(True)
-    plt.show(block=False)
-    plt.show()
+    ax.grid(True)
+    if ax is None:
+        plt.show()
 
-
-def PlotNode(g, nameOrigin):
-    origin = g.find_node(nameOrigin)
-    if origin is None:
+def PlotNode(g, node_name, ax=None):
+    node = g.find_node(node_name)
+    if node is None:
         return False
 
-    plt.figure(figsize=(10, 8))
-
-    # Draw all segments first (gray)
-    for segment in g.segments:
-        plt.plot([segment.origin.x, segment.destination.x],
-                 [segment.origin.y, segment.destination.y],
-                 'k-', color='gray', alpha=0.3)
-
-    # Highlight origin node and its connections
-    for segment in g.segments:
-        if segment.origin == origin or segment.destination == origin:
-            # Red for segments connected to origin
-            plt.plot([segment.origin.x, segment.destination.x],
-                     [segment.origin.y, segment.destination.y],
-                     'r-', linewidth=2)
-            # Add cost label at midpoint
-            mid_x = (segment.origin.x + segment.destination.x) / 2
-            mid_y = (segment.origin.y + segment.destination.y) / 2
-            plt.text(mid_x, mid_y, str(segment.cost), color='red')
-
-    # Draw all nodes
-    for node in g.nodes:
-        if node == origin:
-            # Origin node in blue
-            plt.plot(node.x, node.y, 'bo', markersize=10)
-        elif node in origin.neighbors:
-            # Neighbors in green
-            plt.plot(node.x, node.y, 'go', markersize=8)
-        else:
-            # Others in gray
-            plt.plot(node.x, node.y, 'o', color='gray', markersize=6)
-
-        plt.text(node.x, node.y, node.name, fontsize=12, ha='right')
-
-    plt.grid(True)
-    plt.show(block=False)
-    plt.show()
+    if ax is None:
+        fig, ax = plt.subplots(figsize=(10, 8))
+    
+    # Dibujar todo el grafo primero
+    Plot(g, ax)
+    
+    # Resaltar el nodo específico
+    ax.plot(node.x, node.y, 'ro', markersize=10)
+    ax.text(node.x, node.y, node.name, fontsize=12, ha='right', color='red')
+    
+    # Resaltar conexiones
+    for segment in g.segments.values():
+        if segment.origin == node or segment.destination == node:
+            ax.plot([segment.origin.x, segment.destination.x],
+                    [segment.origin.y, segment.destination.y],
+                    'r-', linewidth=2)
+    
+    if ax is None:
+        plt.show()
     return True
 
 def ReadGraphFromFile(filename):
-    """
-    Llegeix un graf des d'un fitxer de text
-    Format del fitxer:
-    NODE nom_node x y
-    SEGMENT nom_segment node_origen node_destí [cost]
-    """
     g = Graph()
-
     try:
         with open(filename, 'r') as file:
             for line in file:
@@ -152,12 +120,8 @@ def ReadGraphFromFile(filename):
                     seg_name, origin, dest = parts[1], parts[2], parts[3]
                     cost = float(parts[4]) if len(parts) > 4 else 1.0
                     AddSegment(g, seg_name, origin, dest, cost)
-
-    except FileNotFoundError:
-        print(f"Error: No s'ha trobat el fitxer {filename}")
-        return None
     except Exception as e:
-        print(f"Error en llegir el fitxer: {e}")
+        print(f"Error reading file: {e}")
         return None
-
     return g
+

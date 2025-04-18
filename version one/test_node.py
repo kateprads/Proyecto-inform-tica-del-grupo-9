@@ -1,22 +1,23 @@
-from xml.dom import Node
-from node import * # # Import everything from the node module
+from Graph import Node  # Importar desde Graph.py
 
-## Create nodes n1 and n2
-n1 = Node ('aaa', 0, 0)
-n2 = Node ('bbb', 3, 4)
+def main():
+    # Crear nodos de prueba
+    n1 = Node("A", 0, 0)
+    n2 = Node("B", 3, 4)
+    
+    # Probar distancia euclidiana
+    distance = ((n2.x - n1.x)**2 + (n2.y - n1.y)**2)**0.5
+    print(f"Distancia entre {n1.name} y {n2.name}: {distance:.2f}")
+    
+    # Probar añadir vecinos
+    n1.neighbors.append(n2)
+    print(f"Vecinos de {n1.name}: {[n.name for n in n1.neighbors]}")
+    
+    # Mostrar atributos
+    print(f"\nDetalles de {n1.name}:")
+    print(f"Nombre: {n1.name}")
+    print(f"Coordenadas: ({n1.x}, {n1.y})")
+    print(f"Vecinos: {[n.name for n in n1.neighbors]}")
 
-## Test the distance between n1 and n2
-print (n1.euclidean_distance(n2))
-
-## Add n2 as a neighbor of n1
-print (n1.add_neighbor(n2))
-
-# Try adding n2 again as a neighbor of n1
-print (n1.add_neighbor(n2))
-
-## Print the internal dictionary of n1 (this shows all its attributes)
-print (n1.__dict__)
-
-## Print the internal dictionaries of n1's neighbors
-for n in n1.neighbors:
- print ( n.__dict__)
+if __name__ == "__main__":
+    main()
