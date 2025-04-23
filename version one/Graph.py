@@ -1,6 +1,8 @@
+import heapq
 from matplotlib.path import Path
 import matplotlib.pyplot as plt
 import math
+
 
 class Node:
     def __init__(self, name, x, y):
@@ -30,12 +32,19 @@ def AddNode(g, n):
     g.nodes[n.name] = n
     return True
 
-def AddSegment(g, name, nameOrigin, nameDestination, cost=1):
+
+def AddSegment(g, name, nameOrigin, nameDestination, cost=None):  # ← cost es opcional
     origin = g.find_node(nameOrigin)
     destination = g.find_node(nameDestination)
 
     if origin is None or destination is None:
         return False
+
+    # Usar costo manual si existe, si no, calcular euclidiano
+    if cost is None:
+        dx = origin.x - destination.x
+        dy = origin.y - destination.y
+        cost = round(math.sqrt(dx**2 + dy**2), 3)
 
     segment = Segment(name, origin, destination, cost)
     g.segments[name] = segment
@@ -125,3 +134,99 @@ def ReadGraphFromFile(filename):
         return None
     return g
 
+#Modification Version 2
+# Add to Graph.py
+from path import Path
+import math
+
+def EuclideanDistance(node1, node2):
+    """Calculate Euclidean distance between two nodes"""
+    return math.sqrt((node1.x - node2.x)**2 + (node1.y - node2.y)**2)
+
+def FindReachableNodes(g, start_name):
+    """Find all nodes reachable from start node"""
+    start = g.find_node(start_name)
+    if not start:
+        return None
+    
+    visited = set()
+    queue = [start]
+    visited.add(start)
+    
+    while queue:
+        current = queue.pop(0)
+        for neighbor in current.neighbors:
+            if neighbor not in visited:
+                visited.add(neighbor)
+                queue.append(neighbor)
+    
+    return visited
+
+def FindShortestPath(g, origin_name, destination_name):
+    Path = _import_Path()
+    origin = g.find_node(origin_name)
+    destination = g.find_node(destination_name)
+    if not origin or not destination:
+        return None
+    
+    # Initialize open and closed lists
+    open_paths = [Path(origin)]
+    closed_nodes = set()
+    
+    while open_paths:
+        # Find path with lowest estimated total cost
+        min_cost = float('inf')
+        best_path = None
+        best_index = -1
+        
+        for i, path in enumerate(open_paths):
+            last_node = path.GetLastNode()
+            heuristic = EuclideanDistance(last_node, destination)
+            total_estimate = path.cost + heuristic
+            
+            if total_estimate < min_cost:
+                min_cost = total_estimate
+                best_path = path
+                best_index = i
+        
+        # Remove best path from open list
+        current_path = open_paths.pop(best_index)
+        last_node = current_path.GetLastNode()
+        
+        # Check if we've reached the destination
+        if last_node == destination:
+            return current_path
+        
+        # Add to closed set
+        closed_nodes.add(last_node)
+        
+        # Explore neighbors
+        for segment in g.segments.values():
+            if segment.origin == last_node:
+                neighbor = segment.destination
+                
+                # Skip if already in closed set
+                if neighbor in closed_nodes:
+                    continue
+                
+                # Check if neighbor is already in a path in open_paths
+                found_better = False
+                for existing_path in open_paths:
+                    if existing_path.ContainsNode(neighbor):
+                        # If existing path to neighbor has higher cost, remove it
+                        if existing_path.CostToNode(neighbor) > current_path.cost + segment.cost:
+                            open_paths.remove(existing_path)
+                        else:
+                            found_better = True
+                        break
+                
+                # If no better path exists, add new path
+                if not found_better:
+                    new_path = current_path.Copy()
+                    new_path.AddNodeToPath(neighbor, segment.cost)
+                    open_paths.append(new_path)
+    
+    return None  # No path found
+def _import_Path():
+    from path import Path
+    return Path

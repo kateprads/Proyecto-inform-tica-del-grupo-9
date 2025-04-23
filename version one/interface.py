@@ -1,5 +1,6 @@
 import tkinter as tk
-from tkinter import ttk, messagebox # Añadir al inicio con los otros imports
+from tkinter import ttk, messagebox
+from path import PlotPath 
 
 class GraphInterface(tk.Tk):
     def __init__(self):
@@ -17,7 +18,7 @@ class GraphInterface(tk.Tk):
 from tkinter import filedialog, messagebox, simpledialog
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
 from matplotlib.figure import Figure
-from Graph import Graph, Node, AddNode, AddSegment, ReadGraphFromFile, Plot, PlotNode, GetClosest
+from Graph import FindReachableNodes, FindShortestPath, Graph, Node, AddNode, AddSegment, ReadGraphFromFile, Plot, PlotNode, GetClosest
 
 class GraphInterface(tk.Tk):
 
@@ -111,7 +112,10 @@ class GraphInterface(tk.Tk):
             ("Añadir Nodo", self.add_node),
             ("Añadir Segmento", self.add_segment),
             ("Eliminar Nodo", self.delete_node),
-            ("Nodo más Cercano", self.find_closest_node)]
+            ("Nodo más Cercano", self.find_closest_node),
+            #UPDATE VERSION 2
+            ("Nodos Alcanzables", self.show_reachable_nodes),
+            ("Camino más Corto (A*)", self.show_shortest_path)]
         
         for text, command in edit_buttons:
             btn = ttk.Button(
@@ -143,7 +147,7 @@ class GraphInterface(tk.Tk):
         self.toolbar = NavigationToolbar2Tk(self.canvas, graph_frame)
         self.toolbar.update()
         self.canvas.get_tk_widget().pack(side=tk.TOP, fill=tk.BOTH, expand=True)
-    
+
     def refresh_graph(self):
         self.figure.clear()
         self.ax = self.figure.add_subplot(111)
@@ -362,4 +366,85 @@ if __name__ == "__main__":
     app = GraphInterface()
     app.mainloop()
 
-#HERE V2
+#HERE ADDITIONS V2
+def show_reachable_nodes(self):
+    """Show all nodes reachable from a starting node"""
+    if not self.graph:
+        messagebox.showwarning("Advertencia", "Primero debe cargar o crear un grafo")
+        return
+    
+    start = simpledialog.askstring("Nodos Alcanzables", "Nodo de inicio:")
+    if not start or start not in self.graph.nodes:
+        messagebox.showerror("Error", f"Nodo de inicio '{start}' no válido")
+        return
+    
+    try:
+        reachable = FindReachableNodes(self.graph, start)
+        if not reachable:
+            messagebox.showinfo("Resultado", f"No hay nodos alcanzables desde {start}")
+            return
+        
+        self.figure.clear()
+        self.ax = self.figure.add_subplot(111)
+        
+        # Draw the graph
+        Plot(self.graph, self.ax)
+        
+        # Highlight reachable nodes
+        for node in reachable:
+            self.ax.plot(node.x, node.y, 'go', markersize=10)
+            self.ax.text(node.x, node.y, node.name, fontsize=12, ha='right')
+        
+        # Highlight starting node
+        start_node = self.graph.find_node(start)
+        self.ax.plot(start_node.x, start_node.y, 'ro', markersize=12)
+        
+        messagebox.showinfo("Resultado", 
+                          f"Nodos alcanzables desde {start}: {len(reachable)}\n"
+                          f"Incluyendo: {', '.join([n.name for n in reachable])}")
+        
+        self.canvas.draw()
+    except Exception as e:
+        messagebox.showerror("Error", f"No se pudieron encontrar nodos alcanzables:\n{str(e)}")
+        self.refresh_graph()
+
+def show_shortest_path(self):
+    """Show shortest path between two nodes using A* algorithm"""
+    if not self.graph:
+        messagebox.showwarning("Advertencia", "Primero debe cargar o crear un grafo")
+        return
+    
+    start = simpledialog.askstring("Camino más corto", "Nodo de inicio:")
+    if not start or start not in self.graph.nodes:
+        messagebox.showerror("Error", f"Nodo de inicio '{start}' no válido")
+        return
+    
+    end = simpledialog.askstring("Camino más corto", "Nodo de destino:")
+    if not end or end not in self.graph.nodes:
+        messagebox.showerror("Error", f"Nodo de destino '{end}' no válido")
+        return
+    
+    try:
+        path = FindShortestPath(self.graph, start, end)
+        if not path:
+            messagebox.showinfo("Resultado", f"No hay camino entre {start} y {end}")
+            return
+        
+        self.figure.clear()
+        self.ax = self.figure.add_subplot(111)
+        
+        # Draw the graph
+        Plot(self.graph, self.ax)
+        
+        # Highlight the path
+        PlotPath(self.graph, path, self.ax)
+        
+        # Show info
+        messagebox.showinfo("Camino más corto", 
+                          f"Camino: {path}\n"
+                          f"Costo total: {path.cost:.2f}")
+        
+        self.canvas.draw()
+    except Exception as e:
+        messagebox.showerror("Error", f"No se pudo calcular el camino:\n{str(e)}")
+        self.refresh_graph()
