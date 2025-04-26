@@ -83,27 +83,53 @@ class Path:
     def __str__(self):
         return " -> ".join([node.name for node in self.nodes]) + f" (Cost: {self.cost:.2f})"
 
-def PlotPath(graph, path, ax=None):
-    """Visualize the path on the graph"""
-    if not path or len(path.nodes) < 2:
-        return
-    
+
+def PlotPath(g, path, ax=None):
+    """Highlights path WITHOUT moving/changing original graph"""
     if ax is None:
-        fig, ax = plt.subplots()
+        fig, ax = plt.subplots(figsize=(10, 8))
     
-    # Draw the entire graph first
-    Plot(graph, ax)
+    # 1. FIRST get the current axis limits to lock them
+    xlim = ax.get_xlim() if ax.lines else None
+    ylim = ax.get_ylim() if ax.lines else None
     
-    # Highlight the path
-    for i in range(len(path.nodes)-1):
-        start = path.nodes[i]
-        end = path.nodes[i+1]
-        ax.plot([start.x, end.x], [start.y, end.y], 'r-', linewidth=3)
-        ax.plot(start.x, start.y, 'go', markersize=10)
-        ax.plot(end.x, end.y, 'go', markersize=10)
+    # 2. Draw ORIGINAL GRAPH (if not already drawn)
+    if not ax.lines:  # Only plot if empty
+        Plot(g, ax)
     
-    # Label the path
-    ax.set_title(f"Path: {path}\nTotal Cost: {path.cost:.2f}")
+    # 3. RESTORE original view if it existed
+    if xlim and ylim:
+        ax.set_xlim(xlim)
+        ax.set_ylim(ylim)
     
-    if ax is None:
-        plt.show()
+    # 4. Highlight PATH (if exists)
+    if path and len(path.nodes) > 1:
+        # Store current view
+        current_xlim = ax.get_xlim()
+        current_ylim = ax.get_ylim()
+        
+        # Draw path highlights
+        for i in range(len(path.nodes)-1):
+            seg = next((s for s in g.segments.values() 
+                       if s.origin.name == path.nodes[i].name 
+                       and s.destination.name == path.nodes[i+1].name), None)
+            if seg:
+                ax.annotate("",
+                    xy=(seg.destination.x, seg.destination.y),
+                    xytext=(seg.origin.x, seg.origin.y),
+                    arrowprops=dict(
+                        arrowstyle="-|>",
+                        color='#FFD700',  # Gold
+                        linewidth=3,
+                        alpha=1,
+                        mutation_scale=20
+                    ),
+                    zorder=10  # Always on top
+                )
+        
+        # Restore view after drawing
+        ax.set_xlim(current_xlim)
+        ax.set_ylim(current_ylim)
+    
+    ax.set_title(f"Path: {'→'.join(n.name for n in path.nodes)} | Cost: {path.cost:.2f}")
+    plt.tight_layout()

@@ -4,6 +4,8 @@ from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolb
 from matplotlib.figure import Figure
 from Graph import Graph, Node, AddNode, AddSegment, ReadGraphFromFile, Plot, PlotNode, GetClosest, FindReachableNodes, FindShortestPath
 from path import PlotPath
+import heapq
+
 
 class GraphInterface(tk.Tk):
     def __init__(self):
@@ -56,8 +58,7 @@ class GraphInterface(tk.Tk):
             ("Grafo de Ejemplo", self.load_example_graph),
             ("Grafo Personalizado", self.load_custom_graph),
             ("Cargar desde Archivo", self.load_from_file),
-            ("Guardar Grafo", self.save_graph)
-        ]
+            ("Guardar Grafo", self.save_graph)]
         
         for text, command in button_data:
             btn = ttk.Button(
@@ -99,8 +100,8 @@ class GraphInterface(tk.Tk):
             ("Eliminar Nodo", self.delete_node),
             ("Nodo más Cercano", self.find_closest_node),
             ("Nodos Alcanzables", self.show_reachable_nodes),
-            ("Camino más Corto", self.show_shortest_path)
-        ]
+            ("Camino más Corto", self.show_shortest_path)]
+            
         
         for text, command in edit_buttons:
             btn = ttk.Button(
@@ -132,7 +133,7 @@ class GraphInterface(tk.Tk):
         self.toolbar = NavigationToolbar2Tk(self.canvas, graph_frame)
         self.toolbar.update()
         self.canvas.get_tk_widget().pack(side=tk.TOP, fill=tk.BOTH, expand=True)
-
+    
     def refresh_graph(self):
         self.figure.clear()
         self.ax = self.figure.add_subplot(111)
@@ -260,6 +261,7 @@ class GraphInterface(tk.Tk):
         except Exception as e:
             messagebox.showerror("Error", f"No se pudo añadir el nodo:\n{str(e)}")
     
+    
     def add_segment(self):
         if not self.graph:
             messagebox.showwarning("Advertencia", "Primero debe cargar o crear un grafo")
@@ -282,6 +284,7 @@ class GraphInterface(tk.Tk):
             messagebox.showinfo("Éxito", f"Segmento '{segment_name}' añadido correctamente")
         except Exception as e:
             messagebox.showerror("Error", f"No se pudo añadir el segmento:\n{str(e)}")
+
     
     def delete_node(self):
         if not self.graph:
@@ -334,7 +337,7 @@ class GraphInterface(tk.Tk):
                 self.canvas.draw()
         except Exception as e:
             messagebox.showerror("Error", f"No se pudo encontrar el nodo más cercano:\n{str(e)}")
-
+#HERE ADDITIONS V2
     def show_reachable_nodes(self):
         """V2: Show all reachable nodes from a starting node"""
         if not self.graph:

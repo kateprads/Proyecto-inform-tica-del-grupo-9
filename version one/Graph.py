@@ -63,24 +63,37 @@ def GetClosest(g, x, y):
 
     return closest_node
 
+
 def Plot(g, ax=None):
     if ax is None:
         fig, ax = plt.subplots(figsize=(10, 8))
     
-    # Dibujar segmentos
+    # Draw segments with perfect bright blue arrows
     for segment in g.segments.values():
-        ax.plot([segment.origin.x, segment.destination.x],
-                [segment.origin.y, segment.destination.y],
-                'k-', alpha=0.5)
-        # Etiqueta de costo
+        ax.annotate("",
+                    xy=(segment.destination.x, segment.destination.y),
+                    xytext=(segment.origin.x, segment.origin.y),
+                    arrowprops=dict(
+                        arrowstyle="-|>",  # Filled arrow style
+                        color='#00ccff',   # Your bright blue
+                        linewidth=2.0,
+                        alpha=0.9,
+                        mutation_scale=15,  # Medium arrowhead
+                        shrinkA=0,
+                        shrinkB=0
+                    ))
+        
+        # Cost label without background
         mid_x = (segment.origin.x + segment.destination.x) / 2
         mid_y = (segment.origin.y + segment.destination.y) / 2
-        ax.text(mid_x, mid_y, str(segment.cost), color='red')
+        ax.text(mid_x, mid_y, f"{segment.cost:.1f}", 
+                color='red', fontsize=10, ha='center', va='center')
 
-    # Dibujar nodos
+    # Draw nodes with clean labels
     for node in g.nodes.values():
-        ax.plot(node.x, node.y, 'bo')
-        ax.text(node.x, node.y, node.name, fontsize=12, ha='right')
+        ax.plot(node.x, node.y, 'bo', markersize=8)
+        ax.text(node.x + 0.15, node.y + 0.15, node.name,  # Slight offset
+                fontsize=12, ha='left', va='bottom', color='black')
 
     ax.grid(True)
     if ax is None:
@@ -94,23 +107,31 @@ def PlotNode(g, node_name, ax=None):
     if ax is None:
         fig, ax = plt.subplots(figsize=(10, 8))
     
-    # Dibujar todo el grafo primero
+    # Draw base graph
     Plot(g, ax)
     
-    # Resaltar el nodo específico
+    # Highlight specific node
     ax.plot(node.x, node.y, 'ro', markersize=10)
-    ax.text(node.x, node.y, node.name, fontsize=12, ha='right', color='red')
+    ax.text(node.x + 0.15, node.y + 0.15, node.name, 
+            fontsize=12, ha='left', va='bottom', color='red')
     
-    # Resaltar conexiones
+    # Highlight connections
     for segment in g.segments.values():
         if segment.origin == node or segment.destination == node:
-            ax.plot([segment.origin.x, segment.destination.x],
-                    [segment.origin.y, segment.destination.y],
-                    'r-', linewidth=2)
+            ax.annotate("",
+                        xy=(segment.destination.x, segment.destination.y),
+                        xytext=(segment.origin.x, segment.origin.y),
+                        arrowprops=dict(
+                            arrowstyle="-|>",
+                            color='red',
+                            linewidth=2.5,
+                            alpha=1.0,
+                            mutation_scale=20
+                        ))
     
     if ax is None:
         plt.show()
-    return True
+    return True 
 
 def ReadGraphFromFile(filename):
     g = Graph()
@@ -162,7 +183,7 @@ def FindReachableNodes(g, start_name):
     
     return visited
 
-def FindShortestPath(g, origin_name, destination_name):
+"""def FindShortestPath(g, origin_name, destination_name):
     Path = _import_Path()
     origin = g.find_node(origin_name)
     destination = g.find_node(destination_name)
@@ -226,7 +247,74 @@ def FindShortestPath(g, origin_name, destination_name):
                     new_path.AddNodeToPath(neighbor, segment.cost)
                     open_paths.append(new_path)
     
+    return None  # No path found"""
+def FindShortestPath(g, origin_name, destination_name):
+    Path = _import_Path()
+    origin = g.find_node(origin_name)
+    destination = g.find_node(destination_name)
+    if not origin or not destination:
+        return None
+    
+    # Initialize open and closed lists
+    open_paths = [Path(origin)]
+    closed_nodes = set()
+    
+    while open_paths:
+        # Find path with lowest estimated total cost
+        min_cost = float('inf')
+        best_path = None
+        best_index = -1
+        
+        for i, path in enumerate(open_paths):
+            last_node = path.GetLastNode()
+            heuristic = EuclideanDistance(last_node, destination)
+            total_estimate = path.cost + heuristic
+            
+            if total_estimate < min_cost:
+                min_cost = total_estimate
+                best_path = path
+                best_index = i
+        
+        # Remove best path from open list
+        current_path = open_paths.pop(best_index)
+        last_node = current_path.GetLastNode()
+        
+        # Check if we've reached the destination
+        if last_node == destination:
+            return current_path
+        
+        # Add to closed set
+        closed_nodes.add(last_node)
+        
+        # Explore neighbors - THIS IS THE FIXED PART
+        for segment in g.segments.values():
+            if segment.origin == last_node:
+                neighbor = segment.destination
+                
+                # Skip if already in closed set
+                if neighbor in closed_nodes:
+                    continue
+                
+                # Check if neighbor is already in a path in open_paths
+                found_better = False
+                for existing_path in open_paths:
+                    if existing_path.GetLastNode() == neighbor:
+                        # If existing path to neighbor has higher cost, remove it
+                        if existing_path.cost > current_path.cost + segment.cost:
+                            open_paths.remove(existing_path)
+                        else:
+                            found_better = True
+                        break
+                
+                # If no better path exists, add new path
+                if not found_better:
+                    new_path = current_path.Copy()
+                    new_path.AddNodeToPath(neighbor, segment.cost)
+                    open_paths.append(new_path)
+    
     return None  # No path found
+    return current_path
+
 def _import_Path():
     from path import Path
     return Path
