@@ -1,0 +1,51 @@
+Cat_aer.txt
+Airports (in bold) with their SIDs and STARs list
+......
+LEAL
+ALT.D ...other departures (SIDs)
+ALT.A ...other arrivals (STARs)
+LEBL
+BCN.D
+BCN.A
+LEGE
+GIR.D
+GIR.A
+LEIB
+IZA.D
+IZA.A
+LELL
+SLL.D
+SLL.A
+LEMH
+MHN.D
+MHN.A
+LEPA
+PAL.D
+PAL.A
+LERS
+RES.D
+RES.A
+LEVC
+VLC.D
+VLC.A
+LEZG
+ZAR.D
+ZAR.A
+LESU
+SEROX ...Standard departure (SID)
+TAKOS ...Standard arrival (STAR)
+LEBZ
+BENID ...Standard departure (SID)
+VIKAR ...Standard arrival (STAR)
+LEJR
+KUGAX ...Standard departure (SID)
+OLIKI ...Standard arrival (STAR)
+LECN
+MIRES ...Standard departure (SID)
+GENIO ...Standard arrival (STAR)
+LESB
+MEDIT ...Standard departure (SID)
+SADEM ...Standard arrival (STAR)
+LEMG
+PONEN ...Standard departure (SID)
+SEBON ...Standard arrival (STAR)
