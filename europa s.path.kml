@@ -1,0 +1,734 @@
+<?xml version="1.0" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2">
+  
+  
+  <Document>
+    
+    
+    <name>Shortest Path: CMA to ADILU</name>
+    
+    
+    <Style id="airportIcon">
+      
+      
+      <IconStyle>
+        
+        
+        <Icon>
+          
+          
+          <href>http://maps.google.com/mapfiles/kml/pal2/icon18.png</href>
+           
+        </Icon>
+        
+        
+        <scale>1.2</scale>
+        
+      
+      </IconStyle>
+      
+      
+      <LabelStyle>
+        
+        
+        <scale>1.2</scale>
+        
+      
+      </LabelStyle>
+      
+    
+    </Style>
+    
+    
+    <Style id="navpointIcon">
+      
+      
+      <IconStyle>
+        
+        
+        <Icon>
+          
+          
+          <href>http://maps.google.com/mapfiles/kml/pal2/icon21.png</href>
+           
+        </Icon>
+        
+        
+        <scale>0.8</scale>
+        
+      
+      </IconStyle>
+      
+      
+      <LabelStyle>
+        
+        
+        <scale>0.8</scale>
+        
+      
+      </LabelStyle>
+      
+    
+    </Style>
+    
+    
+    <Style id="pathLine">
+      
+      
+      <LineStyle>
+        
+        
+        <color>ff0000ff</color>
+         
+        <width>4</width>
+        
+      
+      </LineStyle>
+      
+    
+    </Style>
+    
+    
+    <Style id="airwayLine">
+      
+      
+      <LineStyle>
+        
+        
+        <color>ffbf005f</color>
+         
+        <width>2</width>
+        
+      
+      </LineStyle>
+      
+    
+    </Style>
+    
+    
+    <Style id="conflictArea">
+      
+        
+      <LineStyle>
+        
+            
+        <color>ff0000ff</color>
+         
+        <width>3</width>
+        
+        
+      </LineStyle>
+      
+        
+      <PolyStyle>
+        
+            
+        <color>4c0000ff</color>
+         
+        <fill>1</fill>
+        
+            
+        <outline>1</outline>
+        
+        
+      </PolyStyle>
+      
+    
+    </Style>
+    
+    
+    <Style id="weatherZoneLight">
+      
+        
+      <LineStyle>
+        
+            
+        <color>ff00ffff</color>
+         
+        <width>2</width>
+        
+        
+      </LineStyle>
+      
+        
+      <PolyStyle>
+        
+            
+        <color>4c00ffff</color>
+         
+        <fill>1</fill>
+        
+            
+        <outline>1</outline>
+        
+        
+      </PolyStyle>
+      
+    
+    </Style>
+    
+    
+    <Style id="weatherZoneModerate">
+      
+        
+      <LineStyle>
+        
+            
+        <color>ff00aaff</color>
+         
+        <width>3</width>
+        
+        
+      </LineStyle>
+      
+        
+      <PolyStyle>
+        
+            
+        <color>7f00aaff</color>
+         
+        <fill>1</fill>
+        
+            
+        <outline>1</outline>
+        
+        
+      </PolyStyle>
+      
+    
+    </Style>
+    
+    
+    <Style id="weatherZoneSevere">
+      
+        
+      <LineStyle>
+        
+            
+        <color>ff0000ff</color>
+         
+        <width>4</width>
+        
+        
+      </LineStyle>
+      
+        
+      <PolyStyle>
+        
+            
+        <color>990000ff</color>
+         
+        <fill>1</fill>
+        
+            
+        <outline>1</outline>
+        
+        
+      </PolyStyle>
+      
+    
+    </Style>
+    
+    
+    <Style id="aircraftTrack">
+      
+      
+      <IconStyle>
+        
+        
+        <Icon>
+          
+          
+          <href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href>
+           
+        </Icon>
+        
+        
+        <scale>0.7</scale>
+        
+      
+      </IconStyle>
+      
+      
+      <LabelStyle>
+        
+        
+        <scale>0</scale>
+         
+      </LabelStyle>
+      
+      
+      <LineStyle>
+        
+        
+        <color>ff00aaff</color>
+         
+        <width>2</width>
+        
+      
+      </LineStyle>
+      
+    
+    </Style>
+    
+    
+    <Style id="tma_zone_style">
+      
+        
+      <LineStyle>
+        
+            
+        <color>4c6bffff</color>
+         
+        <width>3</width>
+        
+        
+      </LineStyle>
+      
+        
+      <PolyStyle>
+        
+            
+        <color>4c6bffff</color>
+         
+        <fill>1</fill>
+        
+            
+        <outline>1</outline>
+        
+        
+      </PolyStyle>
+      
+    
+    </Style>
+    
+    
+    <Style id="restricted_zone_style">
+      
+        
+      <LineStyle>
+        
+            
+        <color>b34757ff</color>
+         
+        <width>4</width>
+        
+        
+      </LineStyle>
+      
+        
+      <PolyStyle>
+        
+            
+        <color>b34757ff</color>
+         
+        <fill>1</fill>
+        
+            
+        <outline>1</outline>
+        
+        
+      </PolyStyle>
+      
+    
+    </Style>
+    
+    
+    <Style id="airliner_aircraft_style">
+      
+      
+      <IconStyle>
+        
+        
+        <Icon>
+          
+          
+          <href>http://maps.google.com/mapfiles/kml/shapes/airports.png</href>
+          
+        
+        </Icon>
+        
+        
+        <scale>1.2</scale>
+        
+      
+      </IconStyle>
+      
+    
+    </Style>
+    
+    
+    <Style id="fighter_jet_aircraft_style">
+      
+      
+      <IconStyle>
+        
+        
+        <Icon>
+          
+          
+          <href>http://maps.google.com/mapfiles/kml/shapes/target.png</href>
+          
+        
+        </Icon>
+        
+        
+        <scale>1.0</scale>
+        
+      
+      </IconStyle>
+      
+    
+    </Style>
+    
+    
+    
+    <Placemark>
+      
+      
+      <name>Start: CMA</name>
+      
+      
+      <description>Lat: 40.8672222222, Lon: -1.2980555556</description>
+      
+      
+      <styleUrl>#navpointIcon</styleUrl>
+      
+      
+      <Point>
+        
+        
+        <coordinates>-1.2980555556,40.8672222222,0</coordinates>
+        
+      
+      </Point>
+      
+    
+    </Placemark>
+    
+    
+    <Placemark>
+      
+      
+      <name>Waypoint 2: ADUXO</name>
+      
+      
+      <description>Lat: 40.5122222222, Lon: -2.0641666667</description>
+      
+      
+      <styleUrl>#navpointIcon</styleUrl>
+      
+      
+      <Point>
+        
+        
+        <coordinates>-2.0641666667,40.5122222222,0</coordinates>
+        
+      
+      </Point>
+      
+    
+    </Placemark>
+    
+    
+    <Placemark>
+      
+      
+      <name>Waypoint 3: CJN</name>
+      
+      
+      <description>Lat: 40.3719444444, Lon: -2.5447222222</description>
+      
+      
+      <styleUrl>#navpointIcon</styleUrl>
+      
+      
+      <Point>
+        
+        
+        <coordinates>-2.5447222222,40.3719444444,0</coordinates>
+        
+      
+      </Point>
+      
+    
+    </Placemark>
+    
+    
+    <Placemark>
+      
+      
+      <name>Waypoint 4: LIPOR</name>
+      
+      
+      <description>Lat: 40.4911111111, Lon: -2.8480555556</description>
+      
+      
+      <styleUrl>#navpointIcon</styleUrl>
+      
+      
+      <Point>
+        
+        
+        <coordinates>-2.8480555556,40.4911111111,0</coordinates>
+        
+      
+      </Point>
+      
+    
+    </Placemark>
+    
+    
+    <Placemark>
+      
+      
+      <name>Waypoint 5: MITUM</name>
+      
+      
+      <description>Lat: 40.6455555556, Lon: -3.2477777778</description>
+      
+      
+      <styleUrl>#navpointIcon</styleUrl>
+      
+      
+      <Point>
+        
+        
+        <coordinates>-3.2477777778,40.6455555556,0</coordinates>
+        
+      
+      </Point>
+      
+    
+    </Placemark>
+    
+    
+    <Placemark>
+      
+      
+      <name>Waypoint 6: RBO</name>
+      
+      
+      <description>Lat: 40.8538888889, Lon: -3.2466666667</description>
+      
+      
+      <styleUrl>#navpointIcon</styleUrl>
+      
+      
+      <Point>
+        
+        
+        <coordinates>-3.2466666667,40.8538888889,0</coordinates>
+        
+      
+      </Point>
+      
+    
+    </Placemark>
+    
+    
+    <Placemark>
+      
+      
+      <name>Waypoint 7: NATUL</name>
+      
+      
+      <description>Lat: 41.1433333333, Lon: -3.1819444444</description>
+      
+      
+      <styleUrl>#navpointIcon</styleUrl>
+      
+      
+      <Point>
+        
+        
+        <coordinates>-3.1819444444,41.1433333333,0</coordinates>
+        
+      
+      </Point>
+      
+    
+    </Placemark>
+    
+    
+    <Placemark>
+      
+      
+      <name>Waypoint 8: OSTIX</name>
+      
+      
+      <description>Lat: 41.5044444444, Lon: -3.1</description>
+      
+      
+      <styleUrl>#navpointIcon</styleUrl>
+      
+      
+      <Point>
+        
+        
+        <coordinates>-3.1,41.5044444444,0</coordinates>
+        
+      
+      </Point>
+      
+    
+    </Placemark>
+    
+    
+    <Placemark>
+      
+      
+      <name>Waypoint 9: GASMO</name>
+      
+      
+      <description>Lat: 41.7294444444, Lon: -3.0488888889</description>
+      
+      
+      <styleUrl>#navpointIcon</styleUrl>
+      
+      
+      <Point>
+        
+        
+        <coordinates>-3.0488888889,41.7294444444,0</coordinates>
+        
+      
+      </Point>
+      
+    
+    </Placemark>
+    
+    
+    <Placemark>
+      
+      
+      <name>Waypoint 10: DGO</name>
+      
+      
+      <description>Lat: 42.4533333333, Lon: -2.8805555556</description>
+      
+      
+      <styleUrl>#navpointIcon</styleUrl>
+      
+      
+      <Point>
+        
+        
+        <coordinates>-2.8805555556,42.4533333333,0</coordinates>
+        
+      
+      </Point>
+      
+    
+    </Placemark>
+    
+    
+    <Placemark>
+      
+      
+      <name>Waypoint 11: ABRIX</name>
+      
+      
+      <description>Lat: 43.6463888889, Lon: -1.9625</description>
+      
+      
+      <styleUrl>#navpointIcon</styleUrl>
+      
+      
+      <Point>
+        
+        
+        <coordinates>-1.9625,43.6463888889,0</coordinates>
+        
+      
+      </Point>
+      
+    
+    </Placemark>
+    
+    
+    <Placemark>
+      
+      
+      <name>Waypoint 12: CNA</name>
+      
+      
+      <description>Lat: 45.6594444444, Lon: -0.3116666667</description>
+      
+      
+      <styleUrl>#navpointIcon</styleUrl>
+      
+      
+      <Point>
+        
+        
+        <coordinates>-0.3116666667,45.6594444444,0</coordinates>
+        
+      
+      </Point>
+      
+    
+    </Placemark>
+    
+    
+    <Placemark>
+      
+      
+      <name>End: ADILU</name>
+      
+      
+      <description>Lat: 46.1241666667, Lon: -0.8394444444</description>
+      
+      
+      <styleUrl>#navpointIcon</styleUrl>
+      
+      
+      <Point>
+        
+        
+        <coordinates>-0.8394444444,46.1241666667,0</coordinates>
+        
+      
+      </Point>
+      
+    
+    </Placemark>
+    
+    
+    <Placemark>
+      
+      
+      <name>Path from CMA to ADILU</name>
+      
+      
+      <description>Total Distance: 867.03 km</description>
+      
+      
+      <styleUrl>#pathLine</styleUrl>
+      
+      
+      <LineString>
+        
+        
+        <extrude>1</extrude>
+        
+        
+        <tessellate>1</tessellate>
+        
+        
+        <altitudeMode>clampToGround</altitudeMode>
+        
+        
+        <coordinates>-1.2980555556,40.8672222222,0 -2.0641666667,40.5122222222,0 -2.5447222222,40.3719444444,0 -2.8480555556,40.4911111111,0 -3.2477777778,40.6455555556,0 -3.2466666667,40.8538888889,0 -3.1819444444,41.1433333333,0 -3.1,41.5044444444,0 -3.0488888889,41.7294444444,0 -2.8805555556,42.4533333333,0 -1.9625,43.6463888889,0 -0.3116666667,45.6594444444,0 -0.8394444444,46.1241666667,0</coordinates>
+        
+      
+      </LineString>
+      
+    
+    </Placemark>
+    
+  
+  </Document>
+  
+
+</kml>

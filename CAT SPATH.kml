@@ -1,0 +1,534 @@
+<?xml version="1.0" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  
+  
+  <Document>
+    
+    
+    <name>Shortest Path: PEXOT to NENDA</name>
+    
+    
+    <Style id="airportIcon">
+      
+      
+      <IconStyle>
+        
+        
+        <Icon>
+          
+          
+          <href>http://maps.google.com/mapfiles/kml/pal2/icon14.png</href>
+           
+        </Icon>
+        
+        
+        <scale>1.2</scale>
+        
+      
+      </IconStyle>
+      
+      
+      <LabelStyle>
+        
+        
+        <scale>1.2</scale>
+        
+      
+      </LabelStyle>
+      
+    
+    </Style>
+    
+    
+    <Style id="navpointIcon">
+      
+      
+      <IconStyle>
+        
+        
+        <Icon>
+          
+          
+          <href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href>
+           
+        </Icon>
+        
+        
+        <scale>0.8</scale>
+        
+      
+      </IconStyle>
+      
+      
+      <LabelStyle>
+        
+        
+        <scale>0.8</scale>
+        
+      
+      </LabelStyle>
+      
+    
+    </Style>
+    
+    
+    <Style id="pathLine">
+      
+      
+      <LineStyle>
+        
+        
+        <color>ff0000ff</color>
+         
+        <width>4</width>
+        
+      
+      </LineStyle>
+      
+    
+    </Style>
+    
+    
+    <Style id="airwayLine">
+      
+      
+      <LineStyle>
+        
+        
+        <color>ffbf005f</color>
+         
+        <width>2</width>
+        
+      
+      </LineStyle>
+      
+    
+    </Style>
+    
+    
+    <Style id="conflictArea">
+      
+        
+      <LineStyle>
+        
+            
+        <color>ff0000ff</color>
+         
+        <width>3</width>
+        
+        
+      </LineStyle>
+      
+        
+      <PolyStyle>
+        
+            
+        <color>4c0000ff</color>
+         
+        <fill>1</fill>
+        
+            
+        <outline>1</outline>
+        
+        
+      </PolyStyle>
+      
+    
+    </Style>
+    
+    
+    <Style id="weatherZoneLight">
+      
+        
+      <LineStyle>
+        
+            
+        <color>ff00ffff</color>
+         
+        <width>2</width>
+        
+        
+      </LineStyle>
+      
+        
+      <PolyStyle>
+        
+            
+        <color>4c00ffff</color>
+         
+        <fill>1</fill>
+        
+            
+        <outline>1</outline>
+        
+        
+      </PolyStyle>
+      
+    
+    </Style>
+    
+    
+    <Style id="weatherZoneModerate">
+      
+        
+      <LineStyle>
+        
+            
+        <color>ff00aaff</color>
+         
+        <width>3</width>
+        
+        
+      </LineStyle>
+      
+        
+      <PolyStyle>
+        
+            
+        <color>7f00aaff</color>
+         
+        <fill>1</fill>
+        
+            
+        <outline>1</outline>
+        
+        
+      </PolyStyle>
+      
+    
+    </Style>
+    
+    
+    <Style id="weatherZoneSevere">
+      
+        
+      <LineStyle>
+        
+            
+        <color>ff0000ff</color>
+         
+        <width>4</width>
+        
+        
+      </LineStyle>
+      
+        
+      <PolyStyle>
+        
+            
+        <color>990000ff</color>
+         
+        <fill>1</fill>
+        
+            
+        <outline>1</outline>
+        
+        
+      </PolyStyle>
+      
+    
+    </Style>
+    
+    
+    
+    <Placemark>
+      
+      
+      <name>Start: PEXOT</name>
+      
+      
+      <description>Lat: 40.8608333333, Lon: 1.4519444444</description>
+      
+      
+      <styleUrl>#navpointIcon</styleUrl>
+      
+      
+      <Point>
+        
+        
+        <coordinates>1.4519444444,40.8608333333,0</coordinates>
+        
+      
+      </Point>
+      
+    
+    </Placemark>
+    
+    
+    <Placemark>
+      
+      
+      <name>Waypoint 2: RODRA</name>
+      
+      
+      <description>Lat: 41.0513888889, Lon: 1.7302777778</description>
+      
+      
+      <styleUrl>#navpointIcon</styleUrl>
+      
+      
+      <Point>
+        
+        
+        <coordinates>1.7302777778,41.0513888889,0</coordinates>
+        
+      
+      </Point>
+      
+    
+    </Placemark>
+    
+    
+    <Placemark>
+      
+      
+      <name>Waypoint 3: VNV</name>
+      
+      
+      <description>Lat: 41.2105555556, Lon: 1.7058333333</description>
+      
+      
+      <styleUrl>#navpointIcon</styleUrl>
+      
+      
+      <Point>
+        
+        
+        <coordinates>1.7058333333,41.2105555556,0</coordinates>
+        
+      
+      </Point>
+      
+    
+    </Placemark>
+    
+    
+    <Placemark>
+      
+      
+      <name>Waypoint 4: ANTON</name>
+      
+      
+      <description>Lat: 41.26, Lon: 1.6983333333</description>
+      
+      
+      <styleUrl>#navpointIcon</styleUrl>
+      
+      
+      <Point>
+        
+        
+        <coordinates>1.6983333333,41.26,0</coordinates>
+        
+      
+      </Point>
+      
+    
+    </Placemark>
+    
+    
+    <Placemark>
+      
+      
+      <name>Waypoint 5: BISES</name>
+      
+      
+      <description>Lat: 41.3186111111, Lon: 1.6891666667</description>
+      
+      
+      <styleUrl>#navpointIcon</styleUrl>
+      
+      
+      <Point>
+        
+        
+        <coordinates>1.6891666667,41.3186111111,0</coordinates>
+        
+      
+      </Point>
+      
+    
+    </Placemark>
+    
+    
+    <Placemark>
+      
+      
+      <name>Waypoint 6: SADUR</name>
+      
+      
+      <description>Lat: 41.4172222222, Lon: 1.6738888889</description>
+      
+      
+      <styleUrl>#navpointIcon</styleUrl>
+      
+      
+      <Point>
+        
+        
+        <coordinates>1.6738888889,41.4172222222,0</coordinates>
+        
+      
+      </Point>
+      
+    
+    </Placemark>
+    
+    
+    <Placemark>
+      
+      
+      <name>Waypoint 7: CAVES</name>
+      
+      
+      <description>Lat: 41.4833333333, Lon: 1.6636111111</description>
+      
+      
+      <styleUrl>#navpointIcon</styleUrl>
+      
+      
+      <Point>
+        
+        
+        <coordinates>1.6636111111,41.4833333333,0</coordinates>
+        
+      
+      </Point>
+      
+    
+    </Placemark>
+    
+    
+    <Placemark>
+      
+      
+      <name>Waypoint 8: LATRO</name>
+      
+      
+      <description>Lat: 41.7716666667, Lon: 1.6183333333</description>
+      
+      
+      <styleUrl>#navpointIcon</styleUrl>
+      
+      
+      <Point>
+        
+        
+        <coordinates>1.6183333333,41.7716666667,0</coordinates>
+        
+      
+      </Point>
+      
+    
+    </Placemark>
+    
+    
+    <Placemark>
+      
+      
+      <name>Waypoint 9: MAMUK</name>
+      
+      
+      <description>Lat: 41.8366666667, Lon: 2.0722222222</description>
+      
+      
+      <styleUrl>#navpointIcon</styleUrl>
+      
+      
+      <Point>
+        
+        
+        <coordinates>2.0722222222,41.8366666667,0</coordinates>
+        
+      
+      </Point>
+      
+    
+    </Placemark>
+    
+    
+    <Placemark>
+      
+      
+      <name>Waypoint 10: GIR</name>
+      
+      
+      <description>Lat: 41.9313888889, Lon: 2.7716666667</description>
+      
+      
+      <styleUrl>#navpointIcon</styleUrl>
+      
+      
+      <Point>
+        
+        
+        <coordinates>2.7716666667,41.9313888889,0</coordinates>
+        
+      
+      </Point>
+      
+    
+    </Placemark>
+    
+    
+    <Placemark>
+      
+      
+      <name>End: NENDA</name>
+      
+      
+      <description>Lat: 41.6844444444, Lon: 2.7513888889</description>
+      
+      
+      <styleUrl>#navpointIcon</styleUrl>
+      
+      
+      <Point>
+        
+        
+        <coordinates>2.7513888889,41.6844444444,0</coordinates>
+        
+      
+      </Point>
+      
+    
+    </Placemark>
+    
+    
+    <Placemark>
+      
+      
+      <name>Path from PEXOT to NENDA</name>
+      
+      
+      <description>Total Distance: 237.00 km</description>
+      
+      
+      <styleUrl>#pathLine</styleUrl>
+      
+      
+      <LineString>
+        
+        
+        <extrude>1</extrude>
+        
+        
+        <tessellate>1</tessellate>
+        
+        
+        <altitudeMode>clampToGround</altitudeMode>
+        
+        
+        <coordinates>1.4519444444,40.8608333333,0 1.7302777778,41.0513888889,0 1.7058333333,41.2105555556,0 1.6983333333,41.26,0 1.6891666667,41.3186111111,0 1.6738888889,41.4172222222,0 1.6636111111,41.4833333333,0 1.6183333333,41.7716666667,0 2.0722222222,41.8366666667,0 2.7716666667,41.9313888889,0 2.7513888889,41.6844444444,0</coordinates>
+        
+      
+      </LineString>
+      
+    
+    </Placemark>
+    
+  
+  </Document>
+  
+
+</kml>

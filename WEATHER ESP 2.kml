@@ -1,0 +1,367 @@
+<?xml version="1.0" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2">
+  
+  
+  <Document>
+    
+    
+    <name>Current Weather Zones</name>
+    
+    
+    <Style id="airportIcon">
+      
+      
+      <IconStyle>
+        
+        
+        <Icon>
+          
+          
+          <href>http://maps.google.com/mapfiles/kml/pal2/icon18.png</href>
+           
+        </Icon>
+        
+        
+        <scale>1.2</scale>
+        
+      
+      </IconStyle>
+      
+      
+      <LabelStyle>
+        
+        
+        <scale>1.2</scale>
+        
+      
+      </LabelStyle>
+      
+    
+    </Style>
+    
+    
+    <Style id="navpointIcon">
+      
+      
+      <IconStyle>
+        
+        
+        <Icon>
+          
+          
+          <href>http://maps.google.com/mapfiles/kml/pal2/icon21.png</href>
+           
+        </Icon>
+        
+        
+        <scale>0.8</scale>
+        
+      
+      </IconStyle>
+      
+      
+      <LabelStyle>
+        
+        
+        <scale>0.8</scale>
+        
+      
+      </LabelStyle>
+      
+    
+    </Style>
+    
+    
+    <Style id="pathLine">
+      
+      
+      <LineStyle>
+        
+        
+        <color>ff0000ff</color>
+         
+        <width>4</width>
+        
+      
+      </LineStyle>
+      
+    
+    </Style>
+    
+    
+    <Style id="airwayLine">
+      
+      
+      <LineStyle>
+        
+        
+        <color>ffbf005f</color>
+         
+        <width>2</width>
+        
+      
+      </LineStyle>
+      
+    
+    </Style>
+    
+    
+    <Style id="conflictArea">
+      
+        
+      <LineStyle>
+        
+            
+        <color>ff0000ff</color>
+         
+        <width>3</width>
+        
+        
+      </LineStyle>
+      
+        
+      <PolyStyle>
+        
+            
+        <color>4c0000ff</color>
+         
+        <fill>1</fill>
+        
+            
+        <outline>1</outline>
+        
+        
+      </PolyStyle>
+      
+    
+    </Style>
+    
+    
+    <Style id="weatherZoneLight">
+      
+        
+      <LineStyle>
+        
+            
+        <color>ff00ffff</color>
+         
+        <width>2</width>
+        
+        
+      </LineStyle>
+      
+        
+      <PolyStyle>
+        
+            
+        <color>4c00ffff</color>
+         
+        <fill>1</fill>
+        
+            
+        <outline>1</outline>
+        
+        
+      </PolyStyle>
+      
+    
+    </Style>
+    
+    
+    <Style id="weatherZoneModerate">
+      
+        
+      <LineStyle>
+        
+            
+        <color>ff00aaff</color>
+         
+        <width>3</width>
+        
+        
+      </LineStyle>
+      
+        
+      <PolyStyle>
+        
+            
+        <color>7f00aaff</color>
+         
+        <fill>1</fill>
+        
+            
+        <outline>1</outline>
+        
+        
+      </PolyStyle>
+      
+    
+    </Style>
+    
+    
+    <Style id="weatherZoneSevere">
+      
+        
+      <LineStyle>
+        
+            
+        <color>ff0000ff</color>
+         
+        <width>4</width>
+        
+        
+      </LineStyle>
+      
+        
+      <PolyStyle>
+        
+            
+        <color>990000ff</color>
+         
+        <fill>1</fill>
+        
+            
+        <outline>1</outline>
+        
+        
+      </PolyStyle>
+      
+    
+    </Style>
+    
+    
+    <Style id="aircraftTrack">
+      
+      
+      <IconStyle>
+        
+        
+        <Icon>
+          
+          
+          <href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href>
+           
+        </Icon>
+        
+        
+        <scale>0.7</scale>
+        
+      
+      </IconStyle>
+      
+      
+      <LabelStyle>
+        
+        
+        <scale>0</scale>
+         
+      </LabelStyle>
+      
+      
+      <LineStyle>
+        
+        
+        <color>ff00aaff</color>
+         
+        <width>2</width>
+        
+      
+      </LineStyle>
+      
+    
+    </Style>
+    
+    
+    
+    <Placemark>
+      
+        
+      <name>WeatherZone_1</name>
+      
+        
+      <description>Severity: moderate
+Speed: 18.438224779183322 kph
+Direction: 177.8 deg</description>
+      
+        
+      <styleUrl>#weatherZoneModerate</styleUrl>
+      
+        
+      <Polygon>
+        
+            
+        <extrude>1</extrude>
+        
+            
+        <altitudeMode>clampToGround</altitudeMode>
+        
+            
+        <outerBoundaryIs>
+          
+                
+          <LinearRing>
+            
+                    
+            <coordinates>-5.355156880315728,39.24490822445701,0 -3.620653316568853,39.24490822445701,0 -3.620653316568853,40.97941178820388,0 -5.355156880315728,40.97941178820388,0 -5.355156880315728,39.24490822445701,0 -5.355156880315728,39.24490822445701,0</coordinates>
+            
+                
+          </LinearRing>
+          
+            
+        </outerBoundaryIs>
+        
+        
+      </Polygon>
+      
+    
+    </Placemark>
+    
+    
+    <Placemark>
+      
+        
+      <name>WeatherZone_2</name>
+      
+        
+      <description>Severity: light
+Speed: 48.7927988136205 kph
+Direction: 190.8 deg</description>
+      
+        
+      <styleUrl>#weatherZoneLight</styleUrl>
+      
+        
+      <Polygon>
+        
+            
+        <extrude>1</extrude>
+        
+            
+        <altitudeMode>clampToGround</altitudeMode>
+        
+            
+        <outerBoundaryIs>
+          
+                
+          <LinearRing>
+            
+                    
+            <coordinates>-7.503754805864721,43.626983450131014,0 -5.5306224151678745,43.626983450131014,0 -5.5306224151678745,45.60011584082786,0 -7.503754805864721,45.60011584082786,0 -7.503754805864721,43.626983450131014,0 -7.503754805864721,43.626983450131014,0</coordinates>
+            
+                
+          </LinearRing>
+          
+            
+        </outerBoundaryIs>
+        
+        
+      </Polygon>
+      
+    
+    </Placemark>
+    
+  
+  </Document>
+  
+
+</kml>

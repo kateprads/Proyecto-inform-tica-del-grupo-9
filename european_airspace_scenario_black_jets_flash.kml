@@ -1,0 +1,184 @@
+<?xml version="1.0" ?>
+<kml xmlns:ns0="http://www.google.com/kml/ext/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>European Airspace Scenario (Time-Animated - Black Jets with Flash)</name>
+    <description>Time-animated scenario showing a flight path violating a restricted area, a warning appearing, and multiple larger fighter jets (black icon) scrambling with a visual flash at their launch.</description>
+    <Style id="airspacePolygonStyle">
+      <PolyStyle>
+        <color>33F0F0FF</color>
+        <outline>1</outline>
+      </PolyStyle>
+      <LineStyle>
+        <color>FFC0C0C0</color>
+        <width>2</width>
+      </LineStyle>
+    </Style>
+    <Style id="restrictedAreaStyle">
+      <PolyStyle>
+        <color>7F0000FF</color>
+        <outline>1</outline>
+      </PolyStyle>
+      <LineStyle>
+        <color>FF0000FF</color>
+        <width>3</width>
+      </LineStyle>
+    </Style>
+    <Style id="civilianAircraftTrackStyle">
+      <IconStyle>
+        <Icon>http://maps.google.com/mapfiles/kml/shapes/airports.png</Icon>
+        <scale>1.0</scale>
+      </IconStyle>
+      <LineStyle>
+        <color>FF00A5FF</color>
+        <width>4</width>
+      </LineStyle>
+      <LabelStyle>
+        <scale>1.0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="fighterJetTrackStyle">
+      <IconStyle>
+        <Icon>http://maps.google.com/mapfiles/kml/shapes/airports.png</Icon>
+        <scale>1.8</scale>
+        <color>FF000000</color>
+      </IconStyle>
+      <LineStyle>
+        <color>FF0000FF</color>
+        <width>3</width>
+      </LineStyle>
+      <LabelStyle>
+        <scale>1.0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="warningPointStyle">
+      <IconStyle>
+        <Icon>http://maps.google.com/mapfiles/kml/pal2/icon2.png</Icon>
+        <scale>1.5</scale>
+      </IconStyle>
+      <LabelStyle>
+        <color>FF0000FF</color>
+        <scale>1.2</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="scrambleFlashStyle">
+      <IconStyle>
+        <Icon>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</Icon>
+        <color>FF00FFFF</color>
+        <scale>2.0</scale>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Placemark>
+      <name>European Airspace (Simplified)</name>
+      <description>A broad representation of European airspace.</description>
+      <styleUrl>#airspacePolygonStyle</styleUrl>
+      <Polygon>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>1.0,40.0,0 15.0,40.0,0 15.0,55.0,0 1.0,55.0,0 1.0,40.0,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Restricted Military Airspace</name>
+      <description>WARNING: This is a restricted military zone. Unauthorized entry is prohibited.</description>
+      <styleUrl>#restrictedAreaStyle</styleUrl>
+      <Polygon>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>6.0,48.0,0 8.0,48.0,0 8.0,50.0,0 6.0,50.0,0 6.0,48.0,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Civilian Aircraft (Flight 123)</name>
+      <description>Flight path of civilian aircraft crossing restricted zone.</description>
+      <styleUrl>#civilianAircraftTrackStyle</styleUrl>
+      <ns0:Track>
+        <altitudeMode>absolute</altitudeMode>
+        <when>2025-05-29T03:22:17Z</when>
+        <ns0:coord>0.0 42.0 10000</ns0:coord>
+        <when>2025-05-29T03:32:17Z</when>
+        <ns0:coord>2.5 44.5 10000</ns0:coord>
+        <when>2025-05-29T03:42:17Z</when>
+        <ns0:coord>5.0 47.0 10000</ns0:coord>
+        <when>2025-05-29T03:52:17Z</when>
+        <ns0:coord>7.0 49.0 10000</ns0:coord>
+        <when>2025-05-29T04:02:17Z</when>
+        <ns0:coord>10.0 52.0 10000</ns0:coord>
+        <when>2025-05-29T04:22:17Z</when>
+        <ns0:coord>18.0 54.0 10000</ns0:coord>
+      </ns0:Track>
+    </Placemark>
+    <Placemark>
+      <name>AIRSPACE VIOLATION WARNING!</name>
+      <description>&lt;b&gt;Unauthorized aircraft detected entering restricted military airspace&lt;/b&gt;&lt;br/&gt;Coordinates: 49.00, 7.00&lt;br/&gt;Time: 2025-05-29 03:52:17 UTC</description>
+      <styleUrl>#warningPointStyle</styleUrl>
+      <TimeStamp>
+        <when>2025-05-29T03:52:17Z</when>
+      </TimeStamp>
+      <Point>
+        <coordinates>7.0,49.0,10000</coordinates>
+        <altitudeMode>absolute</altitudeMode>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Fighter Jet (Interceptor Alpha)</name>
+      <description>First fighter jet scrambling to intercept.</description>
+      <styleUrl>#fighterJetTrackStyle</styleUrl>
+      <ns0:Track>
+        <altitudeMode>absolute</altitudeMode>
+        <when>2025-05-29T03:57:17Z</when>
+        <ns0:coord>8.0 48.0 13000</ns0:coord>
+        <when>2025-05-29T04:03:17Z</when>
+        <ns0:coord>7.1 49.1 11000</ns0:coord>
+        <when>2025-05-29T04:07:17Z</when>
+        <ns0:coord>7.3 49.3 10000</ns0:coord>
+      </ns0:Track>
+    </Placemark>
+    <Placemark>
+      <name>Fighter 1 Scramble Flash</name>
+      <description>Visual flash indicating Fighter 1 launch.</description>
+      <styleUrl>#scrambleFlashStyle</styleUrl>
+      <TimeSpan>
+        <begin>2025-05-29T03:57:17Z</begin>
+        <end>2025-05-29T03:57:37Z</end>
+      </TimeSpan>
+      <Point>
+        <coordinates>8.0,48.0,13000</coordinates>
+        <altitudeMode>absolute</altitudeMode>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Fighter Jet (Interceptor Bravo)</name>
+      <description>Second fighter jet scrambling to intercept.</description>
+      <styleUrl>#fighterJetTrackStyle</styleUrl>
+      <ns0:Track>
+        <altitudeMode>absolute</altitudeMode>
+        <when>2025-05-29T03:59:17Z</when>
+        <ns0:coord>5.8 49.5 12500</ns0:coord>
+        <when>2025-05-29T04:07:17Z</when>
+        <ns0:coord>6.9 49.1 10500</ns0:coord>
+        <when>2025-05-29T04:11:17Z</when>
+        <ns0:coord>7.2 49.2 10000</ns0:coord>
+      </ns0:Track>
+    </Placemark>
+    <Placemark>
+      <name>Fighter 2 Scramble Flash</name>
+      <description>Visual flash indicating Fighter 2 launch.</description>
+      <styleUrl>#scrambleFlashStyle</styleUrl>
+      <TimeSpan>
+        <begin>2025-05-29T03:59:17Z</begin>
+        <end>2025-05-29T03:59:37Z</end>
+      </TimeSpan>
+      <Point>
+        <coordinates>5.8,49.5,12500</coordinates>
+        <altitudeMode>absolute</altitudeMode>
+      </Point>
+    </Placemark>
+  </Document>
+</kml>

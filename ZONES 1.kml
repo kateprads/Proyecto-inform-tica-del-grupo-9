@@ -1,0 +1,740 @@
+<?xml version="1.0" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2">
+  
+  
+  <Document>
+    
+    
+    <name>3D Airspace Zones</name>
+    
+    
+    <Style id="airportIcon">
+      
+      
+      <IconStyle>
+        
+        
+        <Icon>
+          
+          
+          <href>http://maps.google.com/mapfiles/kml/pal2/icon18.png</href>
+           
+        </Icon>
+        
+        
+        <scale>1.2</scale>
+        
+      
+      </IconStyle>
+      
+      
+      <LabelStyle>
+        
+        
+        <scale>1.2</scale>
+        
+      
+      </LabelStyle>
+      
+    
+    </Style>
+    
+    
+    <Style id="navpointIcon">
+      
+      
+      <IconStyle>
+        
+        
+        <Icon>
+          
+          
+          <href>http://maps.google.com/mapfiles/kml/pal2/icon21.png</href>
+           
+        </Icon>
+        
+        
+        <scale>0.8</scale>
+        
+      
+      </IconStyle>
+      
+      
+      <LabelStyle>
+        
+        
+        <scale>0.8</scale>
+        
+      
+      </LabelStyle>
+      
+    
+    </Style>
+    
+    
+    <Style id="pathLine">
+      
+      
+      <LineStyle>
+        
+        
+        <color>ff0000ff</color>
+         
+        <width>4</width>
+        
+      
+      </LineStyle>
+      
+    
+    </Style>
+    
+    
+    <Style id="airwayLine">
+      
+      
+      <LineStyle>
+        
+        
+        <color>ffbf005f</color>
+         
+        <width>2</width>
+        
+      
+      </LineStyle>
+      
+    
+    </Style>
+    
+    
+    <Style id="conflictArea">
+      
+        
+      <LineStyle>
+        
+            
+        <color>ff0000ff</color>
+         
+        <width>3</width>
+        
+        
+      </LineStyle>
+      
+        
+      <PolyStyle>
+        
+            
+        <color>4c0000ff</color>
+         
+        <fill>1</fill>
+        
+            
+        <outline>1</outline>
+        
+        
+      </PolyStyle>
+      
+    
+    </Style>
+    
+    
+    <Style id="weatherZoneLight">
+      
+        
+      <LineStyle>
+        
+            
+        <color>ff00ffff</color>
+         
+        <width>2</width>
+        
+        
+      </LineStyle>
+      
+        
+      <PolyStyle>
+        
+            
+        <color>4c00ffff</color>
+         
+        <fill>1</fill>
+        
+            
+        <outline>1</outline>
+        
+        
+      </PolyStyle>
+      
+    
+    </Style>
+    
+    
+    <Style id="weatherZoneModerate">
+      
+        
+      <LineStyle>
+        
+            
+        <color>ff00aaff</color>
+         
+        <width>3</width>
+        
+        
+      </LineStyle>
+      
+        
+      <PolyStyle>
+        
+            
+        <color>7f00aaff</color>
+         
+        <fill>1</fill>
+        
+            
+        <outline>1</outline>
+        
+        
+      </PolyStyle>
+      
+    
+    </Style>
+    
+    
+    <Style id="weatherZoneSevere">
+      
+        
+      <LineStyle>
+        
+            
+        <color>ff0000ff</color>
+         
+        <width>4</width>
+        
+        
+      </LineStyle>
+      
+        
+      <PolyStyle>
+        
+            
+        <color>990000ff</color>
+         
+        <fill>1</fill>
+        
+            
+        <outline>1</outline>
+        
+        
+      </PolyStyle>
+      
+    
+    </Style>
+    
+    
+    <Style id="aircraftTrack">
+      
+      
+      <IconStyle>
+        
+        
+        <Icon>
+          
+          
+          <href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href>
+           
+        </Icon>
+        
+        
+        <scale>0.7</scale>
+        
+      
+      </IconStyle>
+      
+      
+      <LabelStyle>
+        
+        
+        <scale>0</scale>
+         
+      </LabelStyle>
+      
+      
+      <LineStyle>
+        
+        
+        <color>ff00aaff</color>
+         
+        <width>2</width>
+        
+      
+      </LineStyle>
+      
+    
+    </Style>
+    
+    
+    <Style id="tma_zone_style">
+      
+        
+      <LineStyle>
+        
+            
+        <color>4c6bffff</color>
+         
+        <width>3</width>
+        
+        
+      </LineStyle>
+      
+        
+      <PolyStyle>
+        
+            
+        <color>4c6bffff</color>
+         
+        <fill>1</fill>
+        
+            
+        <outline>1</outline>
+        
+        
+      </PolyStyle>
+      
+    
+    </Style>
+    
+    
+    <Style id="restricted_zone_style">
+      
+        
+      <LineStyle>
+        
+            
+        <color>b34757ff</color>
+         
+        <width>4</width>
+        
+        
+      </LineStyle>
+      
+        
+      <PolyStyle>
+        
+            
+        <color>b34757ff</color>
+         
+        <fill>1</fill>
+        
+            
+        <outline>1</outline>
+        
+        
+      </PolyStyle>
+      
+    
+    </Style>
+    
+    
+    <Style id="airliner_aircraft_style">
+      
+      
+      <IconStyle>
+        
+        
+        <Icon>
+          
+          
+          <href>http://maps.google.com/mapfiles/kml/shapes/airports.png</href>
+          
+        
+        </Icon>
+        
+        
+        <scale>1.2</scale>
+        
+      
+      </IconStyle>
+      
+    
+    </Style>
+    
+    
+    <Style id="fighter_jet_aircraft_style">
+      
+      
+      <IconStyle>
+        
+        
+        <Icon>
+          
+          
+          <href>http://maps.google.com/mapfiles/kml/shapes/target.png</href>
+          
+        
+        </Icon>
+        
+        
+        <scale>1.0</scale>
+        
+      
+      </IconStyle>
+      
+    
+    </Style>
+    
+    
+
+    
+    <Style id="tma_zone_style">
+      
+        
+      <LineStyle>
+        
+            
+        <color>666b6bff</color>
+        
+            
+        <width>3</width>
+        
+        
+      </LineStyle>
+      
+        
+      <PolyStyle>
+        
+            
+        <color>666b6bff</color>
+        
+            
+        <fill>1</fill>
+        
+            
+        <outline>1</outline>
+        
+        
+      </PolyStyle>
+      
+    
+    </Style>
+    
+
+    
+    <Style id="ctr_zone_style">
+      
+        
+      <LineStyle>
+        
+            
+        <color>7fc4cd4e</color>
+        
+            
+        <width>3</width>
+        
+        
+      </LineStyle>
+      
+        
+      <PolyStyle>
+        
+            
+        <color>7fc4cd4e</color>
+        
+            
+        <fill>1</fill>
+        
+            
+        <outline>1</outline>
+        
+        
+      </PolyStyle>
+      
+    
+    </Style>
+    
+
+    
+    <Style id="awy_zone_style">
+      
+        
+      <LineStyle>
+        
+            
+        <color>4cd1b745</color>
+        
+            
+        <width>3</width>
+        
+        
+      </LineStyle>
+      
+        
+      <PolyStyle>
+        
+            
+        <color>4cd1b745</color>
+        
+            
+        <fill>1</fill>
+        
+            
+        <outline>1</outline>
+        
+        
+      </PolyStyle>
+      
+    
+    </Style>
+    
+
+    
+    <Style id="restricted_zone_style">
+      
+        
+      <LineStyle>
+        
+            
+        <color>b25747ff</color>
+        
+            
+        <width>3</width>
+        
+        
+      </LineStyle>
+      
+        
+      <PolyStyle>
+        
+            
+        <color>b25747ff</color>
+        
+            
+        <fill>1</fill>
+        
+            
+        <outline>1</outline>
+        
+        
+      </PolyStyle>
+      
+    
+    </Style>
+    
+
+    
+    <Style id="prohibited_zone_style">
+      
+        
+      <LineStyle>
+        
+            
+        <color>cc691b2f</color>
+        
+            
+        <width>3</width>
+        
+        
+      </LineStyle>
+      
+        
+      <PolyStyle>
+        
+            
+        <color>cc691b2f</color>
+        
+            
+        <fill>1</fill>
+        
+            
+        <outline>1</outline>
+        
+        
+      </PolyStyle>
+      
+    
+    </Style>
+    
+
+    
+    <Style id="danger_zone_style">
+      
+        
+      <LineStyle>
+        
+            
+        <color>9926a7ff</color>
+        
+            
+        <width>3</width>
+        
+        
+      </LineStyle>
+      
+        
+      <PolyStyle>
+        
+            
+        <color>9926a7ff</color>
+        
+            
+        <fill>1</fill>
+        
+            
+        <outline>1</outline>
+        
+        
+      </PolyStyle>
+      
+    
+    </Style>
+    
+
+    
+    <Placemark>
+      
+        
+      <name>Terminal Maneuvering Area Alpha (TMA)</name>
+      
+        
+      <description><![CDATA[
+            Zone Type: TMA<br/>
+            Altitude Range: 5,000 - 15,000 ft<br/>
+            Description: High traffic terminal area
+        ]]></description>
+      
+        
+      <styleUrl>#tma_zone_style</styleUrl>
+      
+        
+      <Polygon>
+        
+            
+        <extrude>1</extrude>
+        
+            
+        <altitudeMode>absolute</altitudeMode>
+        
+            
+        <outerBoundaryIs>
+          
+                
+          <LinearRing>
+            
+                    
+            <coordinates>
+                        -1.0044444443999998,38.3133333333,4572.0 -0.6044444443999999,38.3133333333,4572.0 -0.6044444443999999,38.6133333333,4572.0 -1.0044444443999998,38.6133333333,4572.0 -1.0044444443999998,38.3133333333,4572.0
+                    </coordinates>
+            
+                
+          </LinearRing>
+          
+            
+        </outerBoundaryIs>
+        
+        
+      </Polygon>
+      
+    
+    </Placemark>
+    
+
+    
+    <Placemark>
+      
+        
+      <name>Control Zone Bravo (CTR)</name>
+      
+        
+      <description><![CDATA[
+            Zone Type: CTR<br/>
+            Altitude Range: 0 - 10,000 ft<br/>
+            Description: Airport control zone
+        ]]></description>
+      
+        
+      <styleUrl>#ctr_zone_style</styleUrl>
+      
+        
+      <Polygon>
+        
+            
+        <extrude>1</extrude>
+        
+            
+        <altitudeMode>absolute</altitudeMode>
+        
+            
+        <outerBoundaryIs>
+          
+                
+          <LinearRing>
+            
+                    
+            <coordinates>
+                        3.9702777778,41.679166666700006,3048.0 4.1702777778,41.679166666700006,3048.0 4.1702777778,41.8791666667,3048.0 3.9702777778,41.8791666667,3048.0 3.9702777778,41.679166666700006,3048.0
+                    </coordinates>
+            
+                
+          </LinearRing>
+          
+            
+        </outerBoundaryIs>
+        
+        
+      </Polygon>
+      
+    
+    </Placemark>
+    
+
+    
+    <Placemark>
+      
+        
+      <name>Restricted Area R-2508 (RESTRICTED)</name>
+      
+        
+      <description><![CDATA[
+            Zone Type: RESTRICTED<br/>
+            Altitude Range: 0 - 60,000 ft<br/>
+            Description: 🚨 MILITARY OPERATIONS AREA - FIREJET INTERCEPT ACTIVE
+        ]]></description>
+      
+        
+      <styleUrl>#restricted_zone_style</styleUrl>
+      
+        
+      <Polygon>
+        
+            
+        <extrude>1</extrude>
+        
+            
+        <altitudeMode>absolute</altitudeMode>
+        
+            
+        <outerBoundaryIs>
+          
+                
+          <LinearRing>
+            
+                    
+            <coordinates>
+                        1.4329166667,39.996249999999996,18288.0 1.7329166666999998,39.996249999999996,18288.0 1.7329166666999998,40.19625,18288.0 1.4329166667,40.19625,18288.0 1.4329166667,39.996249999999996,18288.0
+                    </coordinates>
+            
+                
+          </LinearRing>
+          
+            
+        </outerBoundaryIs>
+        
+        
+      </Polygon>
+      
+    
+    </Placemark>
+    
+  
+  </Document>
+  
+
+</kml>

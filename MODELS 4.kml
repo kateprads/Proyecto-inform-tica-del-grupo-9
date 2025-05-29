@@ -1,0 +1,629 @@
+<?xml version="1.0" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2">
+  
+  
+  <Document>
+    
+    
+    <name>Enhanced Aircraft 3D Models</name>
+    
+    
+    <Style id="airportIcon">
+      
+      
+      <IconStyle>
+        
+        
+        <Icon>
+          
+          
+          <href>http://maps.google.com/mapfiles/kml/pal2/icon18.png</href>
+           
+        </Icon>
+        
+        
+        <scale>1.2</scale>
+        
+      
+      </IconStyle>
+      
+      
+      <LabelStyle>
+        
+        
+        <scale>1.2</scale>
+        
+      
+      </LabelStyle>
+      
+    
+    </Style>
+    
+    
+    <Style id="navpointIcon">
+      
+      
+      <IconStyle>
+        
+        
+        <Icon>
+          
+          
+          <href>http://maps.google.com/mapfiles/kml/pal2/icon21.png</href>
+           
+        </Icon>
+        
+        
+        <scale>0.8</scale>
+        
+      
+      </IconStyle>
+      
+      
+      <LabelStyle>
+        
+        
+        <scale>0.8</scale>
+        
+      
+      </LabelStyle>
+      
+    
+    </Style>
+    
+    
+    <Style id="pathLine">
+      
+      
+      <LineStyle>
+        
+        
+        <color>ff0000ff</color>
+         
+        <width>4</width>
+        
+      
+      </LineStyle>
+      
+    
+    </Style>
+    
+    
+    <Style id="airwayLine">
+      
+      
+      <LineStyle>
+        
+        
+        <color>ffbf005f</color>
+         
+        <width>2</width>
+        
+      
+      </LineStyle>
+      
+    
+    </Style>
+    
+    
+    <Style id="conflictArea">
+      
+        
+      <LineStyle>
+        
+            
+        <color>ff0000ff</color>
+         
+        <width>3</width>
+        
+        
+      </LineStyle>
+      
+        
+      <PolyStyle>
+        
+            
+        <color>4c0000ff</color>
+         
+        <fill>1</fill>
+        
+            
+        <outline>1</outline>
+        
+        
+      </PolyStyle>
+      
+    
+    </Style>
+    
+    
+    <Style id="weatherZoneLight">
+      
+        
+      <LineStyle>
+        
+            
+        <color>ff00ffff</color>
+         
+        <width>2</width>
+        
+        
+      </LineStyle>
+      
+        
+      <PolyStyle>
+        
+            
+        <color>4c00ffff</color>
+         
+        <fill>1</fill>
+        
+            
+        <outline>1</outline>
+        
+        
+      </PolyStyle>
+      
+    
+    </Style>
+    
+    
+    <Style id="weatherZoneModerate">
+      
+        
+      <LineStyle>
+        
+            
+        <color>ff00aaff</color>
+         
+        <width>3</width>
+        
+        
+      </LineStyle>
+      
+        
+      <PolyStyle>
+        
+            
+        <color>7f00aaff</color>
+         
+        <fill>1</fill>
+        
+            
+        <outline>1</outline>
+        
+        
+      </PolyStyle>
+      
+    
+    </Style>
+    
+    
+    <Style id="weatherZoneSevere">
+      
+        
+      <LineStyle>
+        
+            
+        <color>ff0000ff</color>
+         
+        <width>4</width>
+        
+        
+      </LineStyle>
+      
+        
+      <PolyStyle>
+        
+            
+        <color>990000ff</color>
+         
+        <fill>1</fill>
+        
+            
+        <outline>1</outline>
+        
+        
+      </PolyStyle>
+      
+    
+    </Style>
+    
+    
+    <Style id="aircraftTrack">
+      
+      
+      <IconStyle>
+        
+        
+        <Icon>
+          
+          
+          <href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href>
+           
+        </Icon>
+        
+        
+        <scale>0.7</scale>
+        
+      
+      </IconStyle>
+      
+      
+      <LabelStyle>
+        
+        
+        <scale>0</scale>
+         
+      </LabelStyle>
+      
+      
+      <LineStyle>
+        
+        
+        <color>ff00aaff</color>
+         
+        <width>2</width>
+        
+      
+      </LineStyle>
+      
+    
+    </Style>
+    
+    
+    <Style id="tma_zone_style">
+      
+        
+      <LineStyle>
+        
+            
+        <color>4c6bffff</color>
+         
+        <width>3</width>
+        
+        
+      </LineStyle>
+      
+        
+      <PolyStyle>
+        
+            
+        <color>4c6bffff</color>
+         
+        <fill>1</fill>
+        
+            
+        <outline>1</outline>
+        
+        
+      </PolyStyle>
+      
+    
+    </Style>
+    
+    
+    <Style id="restricted_zone_style">
+      
+        
+      <LineStyle>
+        
+            
+        <color>b34757ff</color>
+         
+        <width>4</width>
+        
+        
+      </LineStyle>
+      
+        
+      <PolyStyle>
+        
+            
+        <color>b34757ff</color>
+         
+        <fill>1</fill>
+        
+            
+        <outline>1</outline>
+        
+        
+      </PolyStyle>
+      
+    
+    </Style>
+    
+    
+    <Style id="airliner_aircraft_style">
+      
+      
+      <IconStyle>
+        
+        
+        <Icon>
+          
+          
+          <href>http://maps.google.com/mapfiles/kml/shapes/airports.png</href>
+          
+        
+        </Icon>
+        
+        
+        <scale>1.2</scale>
+        
+      
+      </IconStyle>
+      
+    
+    </Style>
+    
+    
+    <Style id="fighter_jet_aircraft_style">
+      
+      
+      <IconStyle>
+        
+        
+        <Icon>
+          
+          
+          <href>http://maps.google.com/mapfiles/kml/shapes/target.png</href>
+          
+        
+        </Icon>
+        
+        
+        <scale>1.0</scale>
+        
+      
+      </IconStyle>
+      
+    
+    </Style>
+    
+    
+
+    
+    <Placemark>
+      
+        
+      <name>FI051</name>
+      
+        
+      <description><![CDATA[
+            Aircraft Type: FIGHTER_JET<br/>
+            Speed: 850 kph<br/>
+            Altitude: FL492<br/>
+            Status: ✅ Normal Flight
+        ]]></description>
+      
+        
+      <Point>
+        
+            
+        <coordinates>-0.3419413167,38.2371194,14987.625600000001</coordinates>
+        
+        
+      </Point>
+      
+        
+      <styleUrl>#fighter_jet_aircraft_style</styleUrl>
+      
+    
+    </Placemark>
+    
+
+    
+    <Placemark>
+      
+        
+      <name>BU052</name>
+      
+        
+      <description><![CDATA[
+            Aircraft Type: BUSINESS_JET<br/>
+            Speed: 480 kph<br/>
+            Altitude: FL380<br/>
+            Status: ✅ Normal Flight
+        ]]></description>
+      
+        
+      <Point>
+        
+            
+        <coordinates>2.278676,40.9369960167,11584.2288</coordinates>
+        
+        
+      </Point>
+      
+        
+      <styleUrl>#business_jet_aircraft_style</styleUrl>
+      
+    
+    </Placemark>
+    
+
+    
+    <Placemark>
+      
+        
+      <name>BU053</name>
+      
+        
+      <description><![CDATA[
+            Aircraft Type: BUSINESS_JET<br/>
+            Speed: 484 kph<br/>
+            Altitude: FL428<br/>
+            Status: ✅ Normal Flight
+        ]]></description>
+      
+        
+      <Point>
+        
+            
+        <coordinates>-0.8782301333,41.6028794,13057.327200000002</coordinates>
+        
+        
+      </Point>
+      
+        
+      <styleUrl>#business_jet_aircraft_style</styleUrl>
+      
+    
+    </Placemark>
+    
+
+    
+    <Placemark>
+      
+        
+      <name>AI054</name>
+      
+        
+      <description><![CDATA[
+            Aircraft Type: AIRLINER<br/>
+            Speed: 481 kph<br/>
+            Altitude: FL390<br/>
+            Status: ✅ Normal Flight
+        ]]></description>
+      
+        
+      <Point>
+        
+            
+        <coordinates>0.675,38.6688888889,11892.6864</coordinates>
+        
+        
+      </Point>
+      
+        
+      <styleUrl>#airliner_aircraft_style</styleUrl>
+      
+    
+    </Placemark>
+    
+
+    
+    <Placemark>
+      
+        
+      <name>AI055</name>
+      
+        
+      <description><![CDATA[
+            Aircraft Type: AIRLINER<br/>
+            Speed: 473 kph<br/>
+            Altitude: FL408<br/>
+            Status: ✅ Normal Flight
+        ]]></description>
+      
+        
+      <Point>
+        
+            
+        <coordinates>2.0768662333,41.2972901333,12440.1072</coordinates>
+        
+        
+      </Point>
+      
+        
+      <styleUrl>#airliner_aircraft_style</styleUrl>
+      
+    
+    </Placemark>
+    
+
+    
+    <Placemark>
+      
+        
+      <name>BU056</name>
+      
+        
+      <description><![CDATA[
+            Aircraft Type: BUSINESS_JET<br/>
+            Speed: 463 kph<br/>
+            Altitude: FL422<br/>
+            Status: ✅ Normal Flight
+        ]]></description>
+      
+        
+      <Point>
+        
+            
+        <coordinates>2.7188888889,40.8994444444,12865.608</coordinates>
+        
+        
+      </Point>
+      
+        
+      <styleUrl>#business_jet_aircraft_style</styleUrl>
+      
+    
+    </Placemark>
+    
+
+    
+    <Placemark>
+      
+        
+      <name>AI057</name>
+      
+        
+      <description><![CDATA[
+            Aircraft Type: AIRLINER<br/>
+            Speed: 465 kph<br/>
+            Altitude: FL314<br/>
+            Status: ✅ Normal Flight
+        ]]></description>
+      
+        
+      <Point>
+        
+            
+        <coordinates>1.1136111111,41.6977777778,9555.784800000001</coordinates>
+        
+        
+      </Point>
+      
+        
+      <styleUrl>#airliner_aircraft_style</styleUrl>
+      
+    
+    </Placemark>
+    
+
+    
+    <Placemark>
+      
+        
+      <name>BU058</name>
+      
+        
+      <description><![CDATA[
+            Aircraft Type: BUSINESS_JET<br/>
+            Speed: 416 kph<br/>
+            Altitude: FL363<br/>
+            Status: ✅ Normal Flight
+        ]]></description>
+      
+        
+      <Point>
+        
+            
+        <coordinates>1.3802777778,39.6030555556,11052.048</coordinates>
+        
+        
+      </Point>
+      
+        
+      <styleUrl>#business_jet_aircraft_style</styleUrl>
+      
+    
+    </Placemark>
+    
+  
+  </Document>
+  
+
+</kml>
