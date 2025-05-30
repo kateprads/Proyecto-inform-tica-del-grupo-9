@@ -1,0 +1,696 @@
+<?xml version="1.0" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2">
+  
+  
+  <Document>
+    
+    
+    <name>Shortest Path: GIR.D to ELGIX</name>
+    
+    
+    <Style id="airportIcon">
+      
+      
+      <IconStyle>
+        
+        
+        <Icon>
+          
+          
+          <href>http://maps.google.com/mapfiles/kml/pal2/icon18.png</href>
+           
+        </Icon>
+        
+        
+        <scale>1.2</scale>
+        
+      
+      </IconStyle>
+      
+      
+      <LabelStyle>
+        
+        
+        <scale>1.2</scale>
+        
+      
+      </LabelStyle>
+      
+    
+    </Style>
+    
+    
+    <Style id="navpointIcon">
+      
+      
+      <IconStyle>
+        
+        
+        <Icon>
+          
+          
+          <href>http://maps.google.com/mapfiles/kml/pal2/icon21.png</href>
+           
+        </Icon>
+        
+        
+        <scale>0.8</scale>
+        
+      
+      </IconStyle>
+      
+      
+      <LabelStyle>
+        
+        
+        <scale>0.8</scale>
+        
+      
+      </LabelStyle>
+      
+    
+    </Style>
+    
+    
+    <Style id="pathLine">
+      
+      
+      <LineStyle>
+        
+        
+        <color>ff0000ff</color>
+         
+        <width>4</width>
+        
+      
+      </LineStyle>
+      
+    
+    </Style>
+    
+    
+    <Style id="airwayLine">
+      
+      
+      <LineStyle>
+        
+        
+        <color>ffbf005f</color>
+         
+        <width>2</width>
+        
+      
+      </LineStyle>
+      
+    
+    </Style>
+    
+    
+    <Style id="conflictArea">
+      
+        
+      <LineStyle>
+        
+            
+        <color>ff0000ff</color>
+         
+        <width>3</width>
+        
+        
+      </LineStyle>
+      
+        
+      <PolyStyle>
+        
+            
+        <color>4c0000ff</color>
+         
+        <fill>1</fill>
+        
+            
+        <outline>1</outline>
+        
+        
+      </PolyStyle>
+      
+    
+    </Style>
+    
+    
+    <Style id="weatherZoneLight">
+      
+        
+      <LineStyle>
+        
+            
+        <color>ff00ffff</color>
+         
+        <width>2</width>
+        
+        
+      </LineStyle>
+      
+        
+      <PolyStyle>
+        
+            
+        <color>4c00ffff</color>
+         
+        <fill>1</fill>
+        
+            
+        <outline>1</outline>
+        
+        
+      </PolyStyle>
+      
+    
+    </Style>
+    
+    
+    <Style id="weatherZoneModerate">
+      
+        
+      <LineStyle>
+        
+            
+        <color>ff00aaff</color>
+         
+        <width>3</width>
+        
+        
+      </LineStyle>
+      
+        
+      <PolyStyle>
+        
+            
+        <color>7f00aaff</color>
+         
+        <fill>1</fill>
+        
+            
+        <outline>1</outline>
+        
+        
+      </PolyStyle>
+      
+    
+    </Style>
+    
+    
+    <Style id="weatherZoneSevere">
+      
+        
+      <LineStyle>
+        
+            
+        <color>ff0000ff</color>
+         
+        <width>4</width>
+        
+        
+      </LineStyle>
+      
+        
+      <PolyStyle>
+        
+            
+        <color>990000ff</color>
+         
+        <fill>1</fill>
+        
+            
+        <outline>1</outline>
+        
+        
+      </PolyStyle>
+      
+    
+    </Style>
+    
+    
+    <Style id="aircraftTrack">
+      
+      
+      <IconStyle>
+        
+        
+        <Icon>
+          
+          
+          <href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href>
+           
+        </Icon>
+        
+        
+        <scale>0.7</scale>
+        
+      
+      </IconStyle>
+      
+      
+      <LabelStyle>
+        
+        
+        <scale>0</scale>
+         
+      </LabelStyle>
+      
+      
+      <LineStyle>
+        
+        
+        <color>ff00aaff</color>
+         
+        <width>2</width>
+        
+      
+      </LineStyle>
+      
+    
+    </Style>
+    
+    
+    
+    <Placemark>
+      
+      
+      <name>Start: GIR.D</name>
+      
+      
+      <description>Lat: 41.8914040333, Lon: 2.7615182167</description>
+      
+      
+      <styleUrl>#navpointIcon</styleUrl>
+      
+      
+      <Point>
+        
+        
+        <coordinates>2.7615182167,41.8914040333,0</coordinates>
+        
+      
+      </Point>
+      
+    
+    </Placemark>
+    
+    
+    <Placemark>
+      
+      
+      <name>Waypoint 2: MAMUK</name>
+      
+      
+      <description>Lat: 41.8366666667, Lon: 2.0722222222</description>
+      
+      
+      <styleUrl>#navpointIcon</styleUrl>
+      
+      
+      <Point>
+        
+        
+        <coordinates>2.0722222222,41.8366666667,0</coordinates>
+        
+      
+      </Point>
+      
+    
+    </Placemark>
+    
+    
+    <Placemark>
+      
+      
+      <name>Waypoint 3: SLL</name>
+      
+      
+      <description>Lat: 41.52, Lon: 2.1097222222</description>
+      
+      
+      <styleUrl>#navpointIcon</styleUrl>
+      
+      
+      <Point>
+        
+        
+        <coordinates>2.1097222222,41.52,0</coordinates>
+        
+      
+      </Point>
+      
+    
+    </Placemark>
+    
+    
+    <Placemark>
+      
+      
+      <name>Waypoint 4: VIBOK</name>
+      
+      
+      <description>Lat: 41.5469444444, Lon: 1.5019444444</description>
+      
+      
+      <styleUrl>#navpointIcon</styleUrl>
+      
+      
+      <Point>
+        
+        
+        <coordinates>1.5019444444,41.5469444444,0</coordinates>
+        
+      
+      </Point>
+      
+    
+    </Placemark>
+    
+    
+    <Placemark>
+      
+      
+      <name>Waypoint 5: ARBEK</name>
+      
+      
+      <description>Lat: 41.5438888889, Lon: 1.1297222222</description>
+      
+      
+      <styleUrl>#navpointIcon</styleUrl>
+      
+      
+      <Point>
+        
+        
+        <coordinates>1.1297222222,41.5438888889,0</coordinates>
+        
+      
+      </Point>
+      
+    
+    </Placemark>
+    
+    
+    <Placemark>
+      
+      
+      <name>Waypoint 6: MECKI</name>
+      
+      
+      <description>Lat: 41.6619444444, Lon: 0.6786111111</description>
+      
+      
+      <styleUrl>#navpointIcon</styleUrl>
+      
+      
+      <Point>
+        
+        
+        <coordinates>0.6786111111,41.6619444444,0</coordinates>
+        
+      
+      </Point>
+      
+    
+    </Placemark>
+    
+    
+    <Placemark>
+      
+      
+      <name>Waypoint 7: LOBAR</name>
+      
+      
+      <description>Lat: 41.7480555556, Lon: 0.3183333333</description>
+      
+      
+      <styleUrl>#navpointIcon</styleUrl>
+      
+      
+      <Point>
+        
+        
+        <coordinates>0.3183333333,41.7480555556,0</coordinates>
+        
+      
+      </Point>
+      
+    
+    </Placemark>
+    
+    
+    <Placemark>
+      
+      
+      <name>Waypoint 8: DIRMU</name>
+      
+      
+      <description>Lat: 41.7855555556, Lon: 0.1594444444</description>
+      
+      
+      <styleUrl>#navpointIcon</styleUrl>
+      
+      
+      <Point>
+        
+        
+        <coordinates>0.1594444444,41.7855555556,0</coordinates>
+        
+      
+      </Point>
+      
+    
+    </Placemark>
+    
+    
+    <Placemark>
+      
+      
+      <name>Waypoint 9: VAKIN</name>
+      
+      
+      <description>Lat: 41.9047222222, Lon: -0.3533333333</description>
+      
+      
+      <styleUrl>#navpointIcon</styleUrl>
+      
+      
+      <Point>
+        
+        
+        <coordinates>-0.3533333333,41.9047222222,0</coordinates>
+        
+      
+      </Point>
+      
+    
+    </Placemark>
+    
+    
+    <Placemark>
+      
+      
+      <name>Waypoint 10: ZARKO</name>
+      
+      
+      <description>Lat: 42.005, Lon: -0.7927777778</description>
+      
+      
+      <styleUrl>#navpointIcon</styleUrl>
+      
+      
+      <Point>
+        
+        
+        <coordinates>-0.7927777778,42.005,0</coordinates>
+        
+      
+      </Point>
+      
+    
+    </Placemark>
+    
+    
+    <Placemark>
+      
+      
+      <name>Waypoint 11: VASUM</name>
+      
+      
+      <description>Lat: 42.2719444444, Lon: -2.0111111111</description>
+      
+      
+      <styleUrl>#navpointIcon</styleUrl>
+      
+      
+      <Point>
+        
+        
+        <coordinates>-2.0111111111,42.2719444444,0</coordinates>
+        
+      
+      </Point>
+      
+    
+    </Placemark>
+    
+    
+    <Placemark>
+      
+      
+      <name>Waypoint 12: DGO</name>
+      
+      
+      <description>Lat: 42.4533333333, Lon: -2.8805555556</description>
+      
+      
+      <styleUrl>#navpointIcon</styleUrl>
+      
+      
+      <Point>
+        
+        
+        <coordinates>-2.8805555556,42.4533333333,0</coordinates>
+        
+      
+      </Point>
+      
+    
+    </Placemark>
+    
+    
+    <Placemark>
+      
+      
+      <name>Waypoint 13: NEA</name>
+      
+      
+      <description>Lat: 42.0275, Lon: -4.1091666667</description>
+      
+      
+      <styleUrl>#navpointIcon</styleUrl>
+      
+      
+      <Point>
+        
+        
+        <coordinates>-4.1091666667,42.0275,0</coordinates>
+        
+      
+      </Point>
+      
+    
+    </Placemark>
+    
+    
+    <Placemark>
+      
+      
+      <name>Waypoint 14: ZMR</name>
+      
+      
+      <description>Lat: 41.5302777778, Lon: -5.6397222222</description>
+      
+      
+      <styleUrl>#navpointIcon</styleUrl>
+      
+      
+      <Point>
+        
+        
+        <coordinates>-5.6397222222,41.5302777778,0</coordinates>
+        
+      
+      </Point>
+      
+    
+    </Placemark>
+    
+    
+    <Placemark>
+      
+      
+      <name>Waypoint 15: ADORO</name>
+      
+      
+      <description>Lat: 41.4830555556, Lon: -6.28</description>
+      
+      
+      <styleUrl>#navpointIcon</styleUrl>
+      
+      
+      <Point>
+        
+        
+        <coordinates>-6.28,41.4830555556,0</coordinates>
+        
+      
+      </Point>
+      
+    
+    </Placemark>
+    
+    
+    <Placemark>
+      
+      
+      <name>End: ELGIX</name>
+      
+      
+      <description>Lat: 41.5211111111, Lon: -7.6730555556</description>
+      
+      
+      <styleUrl>#navpointIcon</styleUrl>
+      
+      
+      <Point>
+        
+        
+        <coordinates>-7.6730555556,41.5211111111,0</coordinates>
+        
+      
+      </Point>
+      
+    
+    </Placemark>
+    
+    
+    <Placemark>
+      
+      
+      <name>Path from GIR.D to ELGIX</name>
+      
+      
+      <description>Total Distance: 942.68 km</description>
+      
+      
+      <styleUrl>#pathLine</styleUrl>
+      
+      
+      <LineString>
+        
+        
+        <extrude>1</extrude>
+        
+        
+        <tessellate>1</tessellate>
+        
+        
+        <altitudeMode>clampToGround</altitudeMode>
+        
+        
+        <coordinates>2.7615182167,41.8914040333,0 2.0722222222,41.8366666667,0 2.1097222222,41.52,0 1.5019444444,41.5469444444,0 1.1297222222,41.5438888889,0 0.6786111111,41.6619444444,0 0.3183333333,41.7480555556,0 0.1594444444,41.7855555556,0 -0.3533333333,41.9047222222,0 -0.7927777778,42.005,0 -2.0111111111,42.2719444444,0 -2.8805555556,42.4533333333,0 -4.1091666667,42.0275,0 -5.6397222222,41.5302777778,0 -6.28,41.4830555556,0 -7.6730555556,41.5211111111,0</coordinates>
+        
+      
+      </LineString>
+      
+    
+    </Placemark>
+    
+  
+  </Document>
+  
+
+</kml>
